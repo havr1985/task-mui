@@ -1,0 +1,25 @@
+{
+  "product":{
+    "name": "Mixer Smeg SMF03DGEU",
+    "price": 1190.99,
+    "colors": ["#FFFFFF", "#FFC0CB", "#FF4842", "#1890FF"],
+    "images": [
+      "https://bucket-smeg.4flow.cloud/OBJECTS/JPG%2072%20dpi/SMF03BLEU.jpg",
+      "https://smeg-partner.com.ua/images/catalog/108697.jpg",
+      "https://smg-store.com.ua/image/cache/catalog/products/2019/SMF03CREU-1-800x800.jpg"
+      
+    ],
+    "sizes": ["200v", "300v", "400v"],
+    "quantity": 80,
+    "category": "Technical",
+    "available": 567,
+    "totalRatings": 5,
+    "totalReviews": 100,
+    "taxes": 878,
+    "inventoryType": "in stock",
+    "reviews": "\n<h6>Reviews</h6>\n<br/>\n<ol>\n <p>Equipped with a robust motor and advanced technology, the Mixer X delivers unparalleled performance. Whether it's whipping, kneading, or mixing, its versatile functionality ensures consistent results every time. From delicate meringues to dense bread dough, tackle any recipe with confidence.</p>",
+    "subDescription": "This switch adapted mixer is a great way to share the fun of cooking with everyone! Use to mix drinks, whisk eggs, make cake batter, combine dry",
+    "description": "\n<h6>Specifications</h6>\n<br/>\n<ol>\n <p>In the realm of culinary craftsmanship, precision and efficiency are paramount. Enter our latest innovation – the Mixer X. Engineered with sophistication and designed for the discerning chef, this mixer redefines the art of blending.</p>"
+  }
+  
+}
