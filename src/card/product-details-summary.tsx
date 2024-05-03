@@ -25,6 +25,7 @@ import { IProductItem } from '../types/product';
 import { ICheckoutItem } from '../types/checkout';
 
 import IncrementerButton from './common/incrementer-button';
+import toast from 'react-hot-toast';
 
 // ----------------------------------------------------------------------
 
@@ -97,7 +98,7 @@ export default function ProductDetailsSummary({
           subTotal: data.price * data.quantity,
         });
       
-      
+      toast.success(`You order color - ${values.colors} power - ${values.size} price - ${data.price * data.quantity}`)
     } catch (error) {
       console.error(error);
     }
@@ -111,6 +112,7 @@ export default function ProductDetailsSummary({
         colors: [values.colors],
         subTotal: values.price * values.quantity,
       });
+      toast.success("You added card!")
     } catch (error) {
       console.error(error);
     }
