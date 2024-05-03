@@ -148,7 +148,7 @@ export default function ProductDetailsCarousel({ product }: Props) {
         {slides.map((item, index) => (
           
           <Box key={item.src} sx={{ px: 0.5 }}>
-            {index}
+           
             <Avatar
               key={item.src}
               alt={item.src}
