@@ -16,7 +16,7 @@ import { useRouter } from 'src/routes/hooks';
 
 
 
-import Label from 'src/components/label';
+
 import Iconify from 'src/components/iconify';
 import { ColorPicker } from 'src/components/color-utils';
 import FormProvider, { RHFSelect } from 'src/components/hook-form';
@@ -25,7 +25,8 @@ import { IProductItem } from '../types/product';
 import { ICheckoutItem } from '../types/checkout';
 
 import IncrementerButton from './common/incrementer-button';
-import toast from 'react-hot-toast';
+
+
 
 // ----------------------------------------------------------------------
 
@@ -97,8 +98,8 @@ export default function ProductDetailsSummary({
           colors: [values.colors],
           subTotal: data.price * data.quantity,
         });
+      alert(`color - ${values.colors} power - ${values.size} total price ${data.price * data.quantity}`)
       
-      toast.success(`You order color - ${values.colors} power - ${values.size} price - ${data.price * data.quantity}`)
     } catch (error) {
       console.error(error);
     }
@@ -112,7 +113,7 @@ export default function ProductDetailsSummary({
         colors: [values.colors],
         subTotal: values.price * values.quantity,
       });
-      toast.success("You added card!")
+     alert("You added cart!")
     } catch (error) {
       console.error(error);
     }

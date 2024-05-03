@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
 import App from './app';
-import { Toaster } from 'react-hot-toast';
+
 
 // ----------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ root.render(
     <BrowserRouter>
       <Suspense>
         <App />
-        <Toaster position="bottom-right" reverseOrder={false} />
+        
       </Suspense>
     </BrowserRouter>
   </HelmetProvider>

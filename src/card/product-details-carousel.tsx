@@ -145,14 +145,14 @@ export default function ProductDetailsCarousel({ product }: Props) {
         asNavFor={carouselLarge.nav}
         ref={carouselThumb.carouselRef}
       >
-        {slides.map((item, index) => (
+        {slides.map(({ src }, index) => (
           
-          <Box key={item.src} sx={{ px: 0.5 }}>
+          <Box key={index} sx={{ px: 0.5 }}>
            
             <Avatar
-              key={item.src}
-              alt={item.src}
-              src={item.src}
+              
+              alt="photo"
+              src={src}
               variant="rounded"
               sx={{
                 width: THUMB_SIZE,
