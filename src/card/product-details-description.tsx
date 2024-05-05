@@ -7,6 +7,7 @@ type Props = {
 };
 
 export default function ProductDetailsDescription({ description }: Props) {
+  
   return (
     <Markdown
       children={description}

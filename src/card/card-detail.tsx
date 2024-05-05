@@ -41,6 +41,7 @@ const SUMMARY = [
 // ----------------------------------------------------------------------
 
 export default function CardDetails() {
+  
   const settings = useSettingsContext();
 
   const [currentTab, setCurrentTab] = useState('description');

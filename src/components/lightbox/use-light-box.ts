@@ -12,6 +12,7 @@ type ReturnType = {
 };
 
 export default function useLightBox(slides: Slide[]): ReturnType {
+  
   const [selected, setSelected] = useState(-1);
 
   const handleOpen = useCallback(
@@ -23,6 +24,7 @@ export default function useLightBox(slides: Slide[]): ReturnType {
       );
 
       setSelected(slideIndex);
+      
     },
     [slides]
   );

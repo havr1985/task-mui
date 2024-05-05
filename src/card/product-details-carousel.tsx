@@ -7,10 +7,10 @@ import { alpha, styled, useTheme } from '@mui/material/styles';
 import { bgGradient } from 'src/theme/css';
 
 import Image from 'src/components/image';
-import Lightbox, { useLightBox } from 'src/components/lightbox';
+
 import Carousel, { useCarousel, CarouselArrowIndex } from 'src/components/carousel';
 
-import { IProductItem } from '../types/product';
+import { IProductItem } from 'src/types/product';
 
 // ----------------------------------------------------------------------
 
@@ -67,14 +67,12 @@ type Props = {
 };
 
 export default function ProductDetailsCarousel({ product }: Props) {
+  
   const theme = useTheme();
 
   const slides = product.images.map((img) => ({
     src: img,
   }));
-  
-
-  const lightbox = useLightBox(slides);
 
   const carouselLarge = useCarousel({
     rtl: false,
@@ -97,12 +95,6 @@ export default function ProductDetailsCarousel({ product }: Props) {
     carouselThumb.onSetNav();
   }, [carouselLarge, carouselThumb]);
 
-  useEffect(() => {
-    if (lightbox.open) {
-      carouselLarge.onTogo(lightbox.selected);
-    }
-  }, [carouselLarge, lightbox.open, lightbox.selected]);
-
   const renderLargeImg = (
     <Box
       sx={{
@@ -117,14 +109,13 @@ export default function ProductDetailsCarousel({ product }: Props) {
         asNavFor={carouselThumb.nav}
         ref={carouselLarge.carouselRef}
       >
-        {slides.map((slide) => (
+        {slides.map((slide, idx) => (
           <Image
             key={slide.src}
             alt={slide.src}
             src={slide.src}
             ratio="1/1"
-            onClick={() => lightbox.onOpen(slide.src)}
-            sx={{ cursor: 'zoom-in' }}
+            sx={{ cursor: 'auto' }}
           />
         ))}
       </Carousel>
@@ -145,14 +136,12 @@ export default function ProductDetailsCarousel({ product }: Props) {
         asNavFor={carouselLarge.nav}
         ref={carouselThumb.carouselRef}
       >
-        {slides.map(({ src }, index) => (
-          
-          <Box key={index} sx={{ px: 0.5 }}>
-           
+        {slides.map((item, index) => (
+          <Box key={item.src} sx={{ px: 0.5 }}>
             <Avatar
-              
-              alt="photo"
-              src={src}
+              key={item.src}
+              alt={item.src}
+              src={item.src}
               variant="rounded"
               sx={{
                 width: THUMB_SIZE,
@@ -179,17 +168,9 @@ export default function ProductDetailsCarousel({ product }: Props) {
         },
       }}
     >
-      {renderLargeImg}
+      {product && renderLargeImg}
 
-      {renderThumbnails}
-
-      <Lightbox
-        index={lightbox.selected}
-        slides={slides}
-        open={lightbox.open}
-        close={lightbox.onClose}
-        onGetCurrentIndex={(index) => lightbox.setSelected(index)}
-      />
+      {product && renderThumbnails}
     </Box>
   );
 }

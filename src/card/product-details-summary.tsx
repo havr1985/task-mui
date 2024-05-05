@@ -9,13 +9,10 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
+
 import { formHelperTextClasses } from '@mui/material/FormHelperText';
 
-import { paths } from 'src/routes/paths';
 import { useRouter } from 'src/routes/hooks';
-
-
-
 
 import Iconify from 'src/components/iconify';
 import { ColorPicker } from 'src/components/color-utils';
@@ -25,8 +22,6 @@ import { IProductItem } from '../types/product';
 import { ICheckoutItem } from '../types/checkout';
 
 import IncrementerButton from './common/incrementer-button';
-
-
 
 // ----------------------------------------------------------------------
 
@@ -49,7 +44,6 @@ export default function ProductDetailsSummary({
   const router = useRouter();
 
   const {
-    
     name,
     sizes,
     price,
@@ -57,17 +51,14 @@ export default function ProductDetailsSummary({
     colors,
     subDescription,
     available,
-    
+
     totalRatings,
     totalReviews,
-    
   } = product;
 
-
   const defaultValues = {
-    
     name,
-    
+
     available,
     price,
     colors: colors[0],
@@ -92,19 +83,20 @@ export default function ProductDetailsSummary({
 
   const onSubmit = handleSubmit(async (data) => {
     try {
-      
-        onAddCart?.({
-          ...data,
-          colors: [values.colors],
-          subTotal: data.price * data.quantity,
-        });
-      alert(`color - ${values.colors} power - ${values.size} total price ${data.price * data.quantity}`)
-      
+      onAddCart?.({
+        ...data,
+        colors: [values.colors],
+        subTotal: data.price * data.quantity,
+      });
+      alert(
+        `color - ${values.colors} power - ${values.size} total price ${(
+          data.price * data.quantity
+        ).toFixed(2)}`
+      );
     } catch (error) {
       console.error(error);
     }
   });
-  
 
   const handleAddCart = useCallback(() => {
     try {
@@ -113,7 +105,7 @@ export default function ProductDetailsSummary({
         colors: [values.colors],
         subTotal: values.price * values.quantity,
       });
-     alert("You added cart!")
+      alert('You added cart!');
     } catch (error) {
       console.error(error);
     }
@@ -128,7 +120,9 @@ export default function ProductDetailsSummary({
           textDecoration: 'line-through',
           mr: 0.5,
         }}
-      >$1111</Box>
+      >
+        $1111
+      </Box>
       ${price}
     </Box>
   );
@@ -289,7 +283,6 @@ export default function ProductDetailsSummary({
     </Stack>
   );
 
-
   const renderInventoryType = (
     <Box
       component="span"
@@ -309,7 +302,6 @@ export default function ProductDetailsSummary({
     <FormProvider methods={methods} onSubmit={onSubmit}>
       <Stack spacing={3} sx={{ pt: 3 }} {...other}>
         <Stack spacing={2} alignItems="flex-start">
-         
           {renderInventoryType}
 
           <Typography variant="h5">{name}</Typography>

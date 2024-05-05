@@ -21,6 +21,7 @@ type ReturnType = {
 };
 
 export default function useCarousel(props?: Settings): ReturnType {
+  
   const theme = useTheme();
 
   const carouselRef = useRef<Carousel | null>(null);

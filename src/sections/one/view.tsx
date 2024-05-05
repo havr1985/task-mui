@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { useSettingsContext } from 'src/components/settings';
 import CardDetails from 'src/card/card-detail';
 
+
 // ----------------------------------------------------------------------
 
 export default function OneView() {
@@ -25,7 +26,10 @@ export default function OneView() {
           border: (theme) => `dashed 1px ${theme.palette.divider}`,
         }}
       >
-      <CardDetails/></Box>
+        <CardDetails />
+       
+      
+      </Box>
     </Container>
   );
 }
