@@ -191,7 +191,7 @@ export default function ProductDetailsSummary({
   const renderSizeOptions = (
     <Stack direction="row">
       <Typography variant="subtitle2" sx={{ flexGrow: 1 }}>
-        Size
+        Power
       </Typography>
 
       <RHFSelect
